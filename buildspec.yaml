@@ -52,7 +52,6 @@ artifacts:
     - task-definition-temp.json
     - appspec.yaml
 
-  # Uploading artifacts to S3
   base-directory: .
   discard-paths: yes
   s3:
