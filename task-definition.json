@@ -1,16 +1,16 @@
 {
-  "family": "$TASK_DEF_FAMILY",
+  "family": "todo-app-family",  // Use a unique family name for the ECS task
   "networkMode": "awsvpc",
   "requiresCompatibilities": [
     "FARGATE"
   ],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::637423563604:role/service-role/AWSCodePipelineServiceRole-ap-southeast-1-todo-app",
+  "executionRoleArn": "arn:aws:iam::637423563604:role/service-role/AWSCodePipelineServiceRole-ap-southeast-1-todo-app",  // Use your correct execution role ARN
   "containerDefinitions": [
     {
-      "name": "todo-app-container",
-      "image": "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG",
+      "name": "todo-app-container",  // The name of your container
+      "image": "637423563604.dkr.ecr.ap-southeast-1.amazonaws.com/todo-app-repo:latest",  // Use your ECR image URL and tag
       "essential": true,
       "portMappings": [
         {
